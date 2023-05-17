@@ -1,21 +1,24 @@
-import { PrismaClient } from '@prisma/client'
+import cors from '@fastify/cors'
 import fastify from 'fastify'
+import { memoriesRoutes } from './routes/memories'
 
 // Criando a aplicacao
 const app = fastify()
 
-// Conectando com o banco
-const prisma = new PrismaClient()
+// Utilizando o cors
+app.register(cors, {
+  // origin: true, // Todas as urls do front podem acessar o back o mais correto em producao é colocar exatamente quais sao as urls permitidas
+  origin: [
+    'http://localhost:3000', // dev
+    'http://umlink.com.br/',
+  ],
+})
+// Registrando um arquivo de rotas separado
+app.register(memoriesRoutes)
 
-// Criando rotas
 app.get('/hello', () => {
   // Acessando essa rota com o metodo get, executa essa funcao
   return 'Hello World'
-})
-
-app.get('/users', async () => {
-  const users = await prisma.user.findMany()
-  return users
 })
 
 // Iniciando a aplicacao

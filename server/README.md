@@ -66,10 +66,23 @@ npx prisma migrate dev
 Para visualizar o Banco no browser:
 npx prisma studio
 
+Erros com banco populado, reset:
+npx prisma migrate reset
+
 Para acessar o Bd de dentro do servidor
 Instalar:
 npm i @prisma/client
 Importar no server.
+
+## Rotas
+
+Separa em uma pasta routes, deixa uma pasta lib com a informacao principal de import do prisma para as rotas importarem desse arquivo.
+
+utilizando zod para validacao
+npm i zod
+
+Ja que o front ta separado do back, cors para validar quais urls do front end podem acessar o backend
+npm i @fastify/cors
 
 ## Outros
 
