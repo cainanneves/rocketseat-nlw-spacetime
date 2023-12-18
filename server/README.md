@@ -87,3 +87,21 @@ npm i @fastify/cors
 ## Outros
 
 Baixei o HTTPIE para testar requisicoes no terminal. Diferente do insomnia mas achei legal.
+
+O prisma nao le as envs do github entao precisa baixar o dotenv em dev pra ler as variaveis ambiente
+
+npm i dotenv -D
+
+Axios para faer requisicoes http a partir do servidor
+npm i axios
+(Existe uma biblioteca nativa para fetch no node tentei usar mas deu erro, provavelmente estou apssando os parametros da forma errada)
+
+Json Web Token para navegacao autenticada na aplicacao
+npm i @fastify/jwt
+
+Upload de arquivos habilita o fastify a entender o envio de outros tipos de dado
+npm i @fastify/multipart
+
+Estamos salvando os uploads direto no disco, salvar direto no disco nao é bom existem diversos serviços como amazom s3, google cloud storage, cloudfare r2. Mas tem que criar conta, cadastrar cartao de credito ... essa forma de salvar no disco foi somente para ser mais simples
+Para deixar a pasta de uploads publica (por padrão nao fica) instalar
+npm i @fastify/static

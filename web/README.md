@@ -29,3 +29,14 @@ plugins: [require('prettier-plugin-tailwindcss')],
 }
 
 organiza a ordem das classes de css do tailwind
+
+axios para enviar a requisicao pro backend
+npm i axios
+
+decodificar o jwt para pegar informacoes
+npm i jwt-decode
+
+'use client' em componentes que tenham onsubmit, onchange...
+
+'use client' impede o uso da funcao de cookies entao instala a seguinte biblioteca para acessar os cookies usando document.cookie
+npm i js-cookie
